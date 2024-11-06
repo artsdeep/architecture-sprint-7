@@ -1,0 +1,45 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: admin-user
+    apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: admin
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: viewer-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: viewer-user
+    apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: viewer
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: configurator-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: configurator-user
+    apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: configurator
+  apiGroup: ""
